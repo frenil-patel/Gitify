@@ -1,0 +1,38 @@
+{
+  "name": "gitify",
+  "displayName": "Gitify",
+  "description": "Visual drag-and-drop Git operations. MVP: show local branches in a React + MUI webview.",
+  "version": "0.0.1",
+  "publisher": "your-name",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:gitify.showBranches"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "gitify.showBranches",
+        "title": "Gitify: Show Branches"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build && npm run build:webview",
+    "build": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "build:webview": "cd webview-ui && npm install && npm run build",
+    "watch:webview": "cd webview-ui && npm run dev"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.30",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.4.0"
+  },
+  "license": "MIT"
+}
